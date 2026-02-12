@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import grandeurLogo from "@/assets/grandeur-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -33,9 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <a href="#home" className="flex flex-col items-start">
-          <span className="font-display text-2xl md:text-3xl font-bold tracking-[0.3em] uppercase text-gold-gradient">
-            Grandeur
-          </span>
+          <img src={grandeurLogo} alt="Grandeur" className="h-10 md:h-12 invert brightness-0 filter" style={{ filter: "invert(1)" }} />
           <span className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-primary-foreground/60 font-body">
             Crafted with Music
           </span>
