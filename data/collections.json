@@ -1,0 +1,45 @@
+{
+  "collections": [
+    {
+      "id": "liverpool",
+      "name": "Liverpool",
+      "tagline": "Where Rhythm Meets Heritage",
+      "year": 2024,
+      "description": "Our inaugural collection celebrates Liverpool's unparalleled contribution to music and culture. Each piece is crafted to honor the spirit of a city that changed the world through sound.",
+      "story": "Liverpool is more than a place; it's a state of mind shaped by music, resilience, and creativity. From the Cavern Club to the docks, from Beatle Road to the Mersey River, every corner resonates with the stories of those who dared to dream. Our Liverpool collection is our tribute to this magnificent city and the music that echoes through its streets.",
+      "image": "/images/collections/liverpool-hero.jpg",
+      "featured": true,
+      "productCount": 6,
+      "colors": ["Black", "Cream", "Deep Green"],
+      "releaseDate": "2024-Q1"
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "tagline": "Neon Dreams & Silent Stories",
+      "year": 2024,
+      "description": "Coming soon. Tokyo's vibrant nightlife and contemplative silence inspire our second collection.",
+      "story": "Tokyo blends ancient tradition with cutting-edge innovation. A city where silence and noise coexist, where tradition meets the future. Our Tokyo collection will capture this paradox.",
+      "image": "/images/collections/tokyo-teaser.jpg",
+      "featured": false,
+      "productCount": 0,
+      "colors": ["Black", "White", "Electric Blue"],
+      "releaseDate": "2024-Q3",
+      "comingSoon": true
+    },
+    {
+      "id": "new-york",
+      "name": "New York",
+      "tagline": "The City That Never Sleeps",
+      "year": 2024,
+      "description": "Coming soon. New York's energy, diversity, and endless possibility await.",
+      "story": "New York is the heartbeat of modern music. From jazz clubs in Harlem to concert halls in Manhattan, this city is where genres are born and legends are made. Our New York collection will celebrate that untamed spirit.",
+      "image": "/images/collections/new-york-teaser.jpg",
+      "featured": false,
+      "productCount": 0,
+      "colors": ["Black", "Gold", "Navy"],
+      "releaseDate": "2024-Q4",
+      "comingSoon": true
+    }
+  ]
+}

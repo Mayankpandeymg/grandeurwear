@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "id": "liverpool-polo-001",
+      "name": "Liverpool Heritage Polo",
+      "price": 129,
+      "collection": "Liverpool",
+      "description": "A timeless polo crafted to celebrate Liverpool's rich musical heritage and cultural significance. This piece embodies the spirit of a city that defined generations.",
+      "image": "/images/products/liverpool-polo-1.jpg",
+      "images": [
+        "/images/products/liverpool-polo-1.jpg",
+        "/images/products/liverpool-polo-1-alt.jpg"
+      ],
+      "colors": ["Black", "Cream", "Deep Green"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "Inspired by Liverpool's unparalleled contribution to music and culture. This polo is our ode to The Beatles, the songwriters, and the millions who danced to the sound of Liverpool.",
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "liverpool-polo-002",
+      "name": "Cavern Club Edition Polo",
+      "price": 139,
+      "collection": "Liverpool",
+      "description": "Limited edition polo paying homage to the legendary Cavern Club, where it all began. A collector's piece for true connoisseurs.",
+      "image": "/images/products/cavern-polo-1.jpg",
+      "images": [
+        "/images/products/cavern-polo-1.jpg",
+        "/images/products/cavern-polo-1-alt.jpg"
+      ],
+      "colors": ["Black", "Cream"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "The Cavern Club is where legends were born. This exclusive polo celebrates the venue that changed music forever, with subtle embroidered details inspired by its iconic interior.",
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "liverpool-polo-003",
+      "name": "Mersey River Polo",
+      "price": 129,
+      "collection": "Liverpool",
+      "description": "Inspired by the flowing waters of the Mersey River, this polo represents the lifeblood of Liverpool's identity.",
+      "image": "/images/products/mersey-polo-1.jpg",
+      "images": [
+        "/images/products/mersey-polo-1.jpg",
+        "/images/products/mersey-polo-1-alt.jpg"
+      ],
+      "colors": ["Deep Green", "Cream", "Black"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "The Mersey River is the artery of Liverpool, carrying stories of music, commerce, and dreams. This polo captures the essence of that flowing energy.",
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "liverpool-polo-004",
+      "name": "Beatle Road Polo",
+      "price": 135,
+      "collection": "Liverpool",
+      "description": "Named after the legendary Beatle Road, this polo is perfect for those who walk the path of music and style.",
+      "image": "/images/products/beatle-road-polo-1.jpg",
+      "images": [
+        "/images/products/beatle-road-polo-1.jpg",
+        "/images/products/beatle-road-polo-1-alt.jpg"
+      ],
+      "colors": ["Black", "Cream", "Deep Green"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "Every street in Liverpool tells a story. This polo honors Beatle Road, where the greatest musical journeys were forged and continue to inspire.",
+      "featured": true,
+      "inStock": true
+    },
+    {
+      "id": "liverpool-polo-005",
+      "name": "Docklands Echo Polo",
+      "price": 129,
+      "collection": "Liverpool",
+      "description": "Feel the echo of Liverpool's bustling docklands, where commerce and culture converged.",
+      "image": "/images/products/docklands-polo-1.jpg",
+      "images": [
+        "/images/products/docklands-polo-1.jpg",
+        "/images/products/docklands-polo-1-alt.jpg"
+      ],
+      "colors": ["Cream", "Deep Green", "Black"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "The docklands echo with the memories of ships coming and going, carrying music and stories across the world. This polo captures that nostalgic resonance.",
+      "featured": false,
+      "inStock": true
+    },
+    {
+      "id": "liverpool-polo-006",
+      "name": "Melodies of the Pier Polo",
+      "price": 139,
+      "collection": "Liverpool",
+      "description": "Limited edition inspired by the sounds and sights of Liverpool's iconic pier.",
+      "image": "/images/products/pier-polo-1.jpg",
+      "images": [
+        "/images/products/pier-polo-1.jpg",
+        "/images/products/pier-polo-1-alt.jpg"
+      ],
+      "colors": ["Black", "Deep Green"],
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "story": "The pier has always been a gathering place for music lovers. This exclusive polo celebrates that tradition with timeless elegance.",
+      "featured": false,
+      "inStock": true
+    }
+  ]
+}
