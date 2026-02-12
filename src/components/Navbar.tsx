@@ -34,7 +34,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <a href="#home" className="flex flex-col items-start">
-          <img src={grandeurLogo} alt="Grandeur" className="h-10 md:h-12 invert brightness-0 filter" style={{ filter: "invert(1)" }} />
+          <img src={grandeurLogo} alt="Grandeur" className="h-14 md:h-16" style={{ filter: "invert(1)" }} />
           <span className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-primary-foreground/60 font-body">
             Crafted with Music
           </span>

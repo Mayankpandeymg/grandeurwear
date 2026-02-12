@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <img src={grandeurLogo} alt="Grandeur" className="h-10 mb-2" style={{ filter: "invert(1)" }} />
+            <img src={grandeurLogo} alt="Grandeur" className="h-14 mb-2" style={{ filter: "invert(1)" }} />
             <p className="text-xs tracking-[0.2em] uppercase text-primary-foreground/40 font-body mb-4">
               Crafted with Music
             </p>

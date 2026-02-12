@@ -34,7 +34,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 1 }}
           className="mb-4"
         >
-          <img src={grandeurLogo} alt="Grandeur" className="h-24 md:h-36 lg:h-44 mx-auto" style={{ filter: "invert(1)" }} />
+          <img src={grandeurLogo} alt="Grandeur" className="h-32 md:h-48 lg:h-60 mx-auto" style={{ filter: "invert(1)" }} />
         </motion.div>
 
         <motion.div
