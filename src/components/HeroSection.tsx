@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import grandeurLogo from "@/assets/grandeur-logo.png";
 
 const HeroSection = () => {
   return (
@@ -27,14 +28,14 @@ const HeroSection = () => {
           The Liverpool Collection — Now Live
         </motion.p>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] uppercase text-primary-foreground mb-4"
+          className="mb-4"
         >
-          Grandeur
-        </motion.h1>
+          <img src={grandeurLogo} alt="Grandeur" className="h-24 md:h-36 lg:h-44 mx-auto" style={{ filter: "invert(1)" }} />
+        </motion.div>
 
         <motion.div
           initial={{ scaleX: 0 }}
