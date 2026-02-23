@@ -1,18 +1,35 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", message: "" });
+    setLoading(true);
+    setError("");
+    try {
+      await addDoc(collection(db, "contacts"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      console.error("Error saving contact:", err);
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -99,12 +116,16 @@ const ContactSection = () => {
               required
               className="w-full bg-transparent border-b border-primary-foreground/20 text-primary-foreground font-body py-3 px-0 placeholder:text-primary-foreground/30 focus:border-gold focus:outline-none transition-colors duration-300 text-base resize-none"
             />
+            {error && (
+              <p className="text-red-400 text-sm font-body">{error}</p>
+            )}
             <button
               type="submit"
-              className="inline-flex items-center gap-3 px-8 py-3 border border-gold text-gold text-sm tracking-[0.2em] uppercase font-body hover:bg-gold hover:text-navy transition-all duration-500"
+              disabled={loading}
+              className="inline-flex items-center gap-3 px-8 py-3 border border-gold text-gold text-sm tracking-[0.2em] uppercase font-body hover:bg-gold hover:text-navy transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {submitted ? "Message Sent" : "Send Message"}
-              <Send size={14} />
+              {loading ? "Sending..." : submitted ? "Message Sent ✓" : "Send Message"}
+              {loading ? <Loader2 size={14} className="animate-spin" /> : <Send size={14} />}
             </button>
           </motion.form>
         </div>
