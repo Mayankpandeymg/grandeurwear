@@ -1,41 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import poloNavy from "@/assets/polo-navy.jpg";
-import poloCream from "@/assets/polo-cream.jpg";
-import poloBurgundy from "@/assets/polo-burgundy.jpg";
-import poloGreen from "@/assets/polo-green.jpg";
-
-const products = [
-  {
-    name: "The Mersey Navy",
-    price: "£89",
-    image: poloNavy,
-    description: "Deep navy polo inspired by Liverpool's maritime heritage",
-  },
-  {
-    name: "The Cavern Cream",
-    price: "£89",
-    image: poloCream,
-    description: "Ivory elegance echoing the iconic Cavern Club walls",
-  },
-  {
-    name: "The Anfield Burgundy",
-    price: "£95",
-    image: poloBurgundy,
-    description: "Rich burgundy channeling the passion of Anfield",
-  },
-  {
-    name: "The Albert Green",
-    price: "£89",
-    image: poloGreen,
-    description: "Forest green honoring the Albert Dock's grandeur",
-  },
-];
+import { useNavigate } from "react-router-dom";
+import { products } from "@/data/products";
 
 const CollectionSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const navigate = useNavigate();
 
   return (
     <section id="collection" className="py-24 md:py-32 bg-cream-gradient">
@@ -62,11 +34,12 @@ const CollectionSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product, i) => (
             <motion.div
-              key={product.name}
+              key={product.id}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="group cursor-pointer"
+              onClick={() => navigate(`/product/${product.id}`)}
             >
               <div className="relative overflow-hidden bg-secondary mb-4">
                 <img
@@ -74,7 +47,7 @@ const CollectionSection = () => {
                   alt={product.name}
                   className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/20 transition-all duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-500 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100">
                   <span className="px-8 py-3 bg-primary text-primary-foreground text-xs tracking-[0.2em] uppercase font-body">
                     View Details
                   </span>
@@ -87,7 +60,7 @@ const CollectionSection = () => {
                 {product.description}
               </p>
               <p className="text-base font-display font-bold text-accent mt-2">
-                {product.price}
+                {product.priceDisplay}
               </p>
             </motion.div>
           ))}
