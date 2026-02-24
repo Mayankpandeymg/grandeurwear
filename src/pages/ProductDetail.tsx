@@ -1,10 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Minus, Plus, ShoppingBag } from "lucide-react";
+import { ArrowLeft, Minus, Plus, CheckCircle } from "lucide-react";
 import { useState } from "react";
 import { getProductById } from "@/data/products";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PayPalCheckout from "@/components/PayPalCheckout";
+import { useToast } from "@/hooks/use-toast";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -12,6 +14,8 @@ const ProductDetail = () => {
   const product = getProductById(id || "");
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [orderComplete, setOrderComplete] = useState(false);
+  const { toast } = useToast();
 
   if (!product) {
     return (
@@ -33,10 +37,21 @@ const ProductDetail = () => {
     );
   }
 
-  const handleBuyNow = () => {
-    if (!selectedSize) return;
-    // Stripe checkout will be wired here
-    console.log("Buy now:", { product: product.id, size: selectedSize, quantity });
+  const handlePaymentSuccess = (details: any) => {
+    setOrderComplete(true);
+    toast({
+      title: "Order Confirmed!",
+      description: `Thank you ${details?.payer?.name?.given_name || ""}! Your ${product.name} (Size ${selectedSize}) is on its way.`,
+    });
+  };
+
+  const handlePaymentError = (error: any) => {
+    toast({
+      title: "Payment Failed",
+      description: "Something went wrong. Please try again.",
+      variant: "destructive",
+    });
+    console.error("Payment error:", error);
   };
 
   return (
@@ -143,15 +158,30 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {/* Buy button */}
-              <button
-                onClick={handleBuyNow}
-                disabled={!selectedSize}
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-primary-foreground text-sm tracking-[0.25em] uppercase font-body hover:bg-primary/90 transition-all duration-500 disabled:opacity-40 disabled:cursor-not-allowed w-full md:w-auto"
-              >
-                <ShoppingBag size={16} />
-                Buy Now — {product.priceDisplay}
-              </button>
+              {/* Payment */}
+              {orderComplete ? (
+                <div className="flex items-center gap-3 px-10 py-4 bg-green-900/20 border border-green-700/30 w-full md:w-auto justify-center">
+                  <CheckCircle size={16} className="text-green-500" />
+                  <span className="text-sm tracking-[0.15em] uppercase font-body text-green-400">
+                    Order Confirmed
+                  </span>
+                </div>
+              ) : selectedSize ? (
+                <div className="w-full md:w-auto">
+                  <PayPalCheckout
+                    amount={product.price}
+                    productName={product.name}
+                    size={selectedSize}
+                    quantity={quantity}
+                    onSuccess={handlePaymentSuccess}
+                    onError={handlePaymentError}
+                  />
+                </div>
+              ) : (
+                <div className="px-10 py-4 bg-primary/40 text-primary-foreground/60 text-sm tracking-[0.25em] uppercase font-body text-center cursor-not-allowed w-full md:w-auto">
+                  Select a size to continue
+                </div>
+              )}
 
               {/* Details */}
               <div className="mt-12">
