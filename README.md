@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# Grandeurwear 👗
 
-## Project info
+Grandeurwear is a modern fashion-oriented web application built with
+**React**, **TypeScript**, and **Vite**, styled using **Tailwind CSS**,
+and integrated with **Supabase** for backend services.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The project is designed to provide a clean, scalable, and responsive
+fashion browsing experience with modern development tooling.
 
-## How can I edit this code?
+------------------------------------------------------------------------
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+-   ⚛️ Built with React + TypeScript\
+-   ⚡ Powered by Vite for fast development\
+-   🎨 Styled using Tailwind CSS\
+-   📱 Fully responsive UI\
+-   🔐 Supabase integration (Auth / Database / Storage ready)\
+-   🧱 Scalable folder structure\
+-   🌱 Environment-based configuration support
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+------------------------------------------------------------------------
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📁 Project Structure
 
-**Use your preferred IDE**
+    grandeurwear/
+    ├── .github/                # GitHub workflows
+    ├── public/                 # Static assets
+    ├── src/                    # Application source code
+    ├── supabase/               # Supabase configuration
+    ├── .env                    # Environment variables
+    ├── package.json            # Dependencies & scripts
+    ├── tailwind.config.ts      # Tailwind configuration
+    ├── tsconfig.json           # TypeScript configuration
+    ├── vite.config.ts          # Vite configuration
+    └── README.md
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+------------------------------------------------------------------------
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🛠️ Tech Stack
 
-Follow these steps:
+### 🔧 Core Technologies
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+  Layer                Technology
+  -------------------- --------------
+  Frontend Framework   React
+  Language             TypeScript
+  Build Tool           Vite
+  Styling              Tailwind CSS
+  Backend Services     Supabase
+  Package Manager      npm
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🧰 Development Tools
 
-# Step 3: Install the necessary dependencies.
-npm i
+-   ESLint -- Code linting\
+-   PostCSS -- CSS processing\
+-   Environment Variables (.env)\
+-   Git & GitHub -- Version control
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+------------------------------------------------------------------------
+
+## 📦 Installation
+
+Clone the repository:
+
+``` bash
+git clone https://github.com/Mayankpandeymg/grandeurwear.git
+cd grandeurwear
+```
+
+Install dependencies:
+
+``` bash
+npm install
+```
+
+Start the development server:
+
+``` bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+    http://localhost:5173
 
-**Use GitHub Codespaces**
+------------------------------------------------------------------------
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔑 Environment Setup
 
-## What technologies are used for this project?
+Create a `.env` file in the root directory and add:
 
-This project is built with:
+    VITE_SUPABASE_URL=your_supabase_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Restart the development server after adding environment variables.
 
-## How can I deploy this project?
+------------------------------------------------------------------------
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 🤝 Contributing
 
-## Can I connect a custom domain to my Lovable project?
+Contributions are welcome!
 
-Yes, you can!
+1.  Fork the repository\
+2.  Create a new branch\
+3.  Commit your changes\
+4.  Push your branch\
+5.  Open a Pull Request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+------------------------------------------------------------------------
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📄 License
+
+This project is licensed under the MIT License.
+
+------------------------------------------------------------------------
+
+⭐ If you find this project helpful, please give it a star!
