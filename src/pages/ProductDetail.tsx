@@ -6,6 +6,7 @@ import { getProductById } from "@/data/products";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useCart } from "@/contexts/CartContext";
+import SizeGuideModal from "@/components/SizeGuideModal";
 import { useToast } from "@/hooks/use-toast";
 
 const ProductDetail = () => {
@@ -102,9 +103,12 @@ const ProductDetail = () => {
 
               {/* Size selector */}
               <div className="mb-8">
-                <p className="text-xs tracking-[0.2em] uppercase text-primary/70 font-body mb-3">
-                  Select Size
-                </p>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-xs tracking-[0.2em] uppercase text-primary/70 font-body">
+                    Select Size
+                  </p>
+                  <SizeGuideModal />
+                </div>
                 <div className="flex flex-wrap gap-3">
                   {product.sizes.map((size) => (
                     <button
