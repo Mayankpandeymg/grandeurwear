@@ -19,8 +19,8 @@ export const products: Product[] = [
   {
     id: "mersey-navy",
     name: "The Mersey Navy",
-    price: 89,
-    priceDisplay: "£89",
+    price: 1199,
+    priceDisplay: "₹1,199",
     image: poloNavy,
     description: "Deep navy polo inspired by Liverpool's maritime heritage",
     longDescription:
@@ -38,8 +38,8 @@ export const products: Product[] = [
   {
     id: "cavern-cream",
     name: "The Cavern Cream",
-    price: 89,
-    priceDisplay: "£89",
+    price: 1149,
+    priceDisplay: "₹1,149",
     image: poloCream,
     description: "Ivory elegance echoing the iconic Cavern Club walls",
     longDescription:
@@ -57,8 +57,8 @@ export const products: Product[] = [
   {
     id: "anfield-burgundy",
     name: "The Anfield Burgundy",
-    price: 95,
-    priceDisplay: "£95",
+    price: 1499,
+    priceDisplay: "₹1,499",
     image: poloBurgundy,
     description: "Rich burgundy channeling the passion of Anfield",
     longDescription:
@@ -76,8 +76,8 @@ export const products: Product[] = [
   {
     id: "albert-green",
     name: "The Albert Green",
-    price: 89,
-    priceDisplay: "£89",
+    price: 1299,
+    priceDisplay: "₹1,299",
     image: poloGreen,
     description: "Forest green honoring the Albert Dock's grandeur",
     longDescription:

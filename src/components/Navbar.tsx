@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import grandeurLogo from "@/assets/grandeur-logo.png";
+import { useCart } from "@/contexts/CartContext";
 
 const navLinks = [
 { label: "Home", href: "#home" },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { totalItems, setIsCartOpen } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -53,13 +55,38 @@ const Navbar = () => {
           )}
         </nav>
 
-        {/* Mobile toggle */}
+        {/* Cart button */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-primary-foreground/80">
-
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          onClick={() => setIsCartOpen(true)}
+          className="hidden md:flex items-center gap-1 text-primary-foreground/80 hover:text-gold transition-colors duration-300 relative"
+        >
+          <ShoppingBag size={20} />
+          {totalItems > 0 && (
+            <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+              {totalItems}
+            </span>
+          )}
         </button>
+        {/* Mobile toggle */}
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="text-primary-foreground/80 hover:text-gold transition-colors relative"
+          >
+            <ShoppingBag size={20} />
+            {totalItems > 0 && (
+              <span className="absolute -top-2 -right-2 bg-accent text-accent-foreground text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-primary-foreground/80"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
