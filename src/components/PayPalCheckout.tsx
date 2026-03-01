@@ -14,7 +14,7 @@ interface PayPalCheckoutProps {
 
 const PayPalCheckout = ({
   amount,
-  currency = "GBP",
+  currency = "INR",
   productName,
   size,
   quantity,
